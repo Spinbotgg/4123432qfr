@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Discord Server</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: rgb(0, 0, 0);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        #joinButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #7289DA;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        #joinButton:hover {
+            background-color: #677BC4;
+        }
+
+        #sidebar {
+            position: fixed;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            cursor: pointer;
+        }
+        
+        #sidebarText {
+            display: none;
+        }
+        
+        #sidebar.open #sidebarText {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar" onclick="toggleSidebar()">
+        <span>&#9776;</span>
+        <div id="sidebarText">Home</div>
+    </div>
+    <div class="container">
+        <button id="joinButton" onclick="redirectToDiscord()">Join Discord Server!</button>
+    </div>
+
+    <script>
+        function redirectToDiscord() {
+            window.location.href = "https://discord.com/invite/spinbot";
+        }
+
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>
